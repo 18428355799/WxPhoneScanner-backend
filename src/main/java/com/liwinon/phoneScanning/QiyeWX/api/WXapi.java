@@ -30,11 +30,11 @@ public class WXapi {
 	 * @param fetch_child   是否递归获取子部门下面的成员 1是 0否
 	 * @return
 	 */
-	@GetMapping(value = "/updateMember")
+	@GetMapping(value = "/phone/updateMember")
 	public String updateMember(String department_id, String fetch_child) {
 		return wx.saveMembers(department_id, fetch_child);
 	}
-	@PostMapping(value = "/WxCheck")
+	@PostMapping(value = "/phone/WxCheck")
 	public String updateMember() {
 		 wx.saveMembers("1", "1");
 		 System.out.println("更新通讯录完毕");

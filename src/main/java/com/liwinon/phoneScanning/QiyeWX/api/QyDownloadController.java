@@ -26,7 +26,7 @@ public class QyDownloadController {
 	 * @param model
 	 * @return
 	 */
-	@GetMapping(value = "/qywx/downloadDoc")
+	@GetMapping(value = "/phone/qywx/downloadDoc")
 	public ResponseEntity<InputStreamResource> entryInfo(String name, HttpServletRequest req) {
 		String path = "";
 		if (StringUtils.isNotBlank(name)) {

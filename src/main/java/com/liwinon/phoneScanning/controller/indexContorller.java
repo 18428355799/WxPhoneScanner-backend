@@ -26,7 +26,7 @@ public class indexContorller {
 	private UtilService util;
 
 	@Transactional
-	@GetMapping(value = "/index")
+	@GetMapping(value = "/phone/index")
 	public Map<String, Object> index(String qrContent, String session_key, String bxName, String bxId) {
 		// System.out.println("接收前端数据："+qrContent);
 		System.out.println("bxName" + bxName);
@@ -58,7 +58,7 @@ public class indexContorller {
 
 	}
 
-	@GetMapping(value = "/delete")
+	@GetMapping(value = "/phone/delete")
 	@Transactional
 	public long del(int invID, String session_key) {
 		// System.out.println(util.isThatHim(session_key, invID));
@@ -77,7 +77,7 @@ public class indexContorller {
 	 * @param field
 	 * @return
 	 */
-	@GetMapping(value = "/crud")
+	@GetMapping(value = "/phone/crud")
 	public List<RecentlyModle> crud(int pageNumber, int pageSize, String sort, String field) {
 		List<RecentlyModle> list = util.getPage(pageNumber, pageSize, sort, field);
 		return list;
@@ -93,7 +93,7 @@ public class indexContorller {
 	 * @param session_key
 	 * @return
 	 */
-	@GetMapping(value = "/Mycrud")
+	@GetMapping(value = "/phone/Mycrud")
 	public List<RecentlyModle> crud(int pageNumber, int pageSize, String sort, String field, String session_key) {
 		if (util.getMyPage(pageNumber, pageSize, sort, field, session_key) == null) {
 			return null; // 前端做非空判断
@@ -114,7 +114,7 @@ public class indexContorller {
 	 * @param date2
 	 * @return RecentlyModle 模型的list集合
 	 */
-	@GetMapping(value = "/MycrudDate")
+	@GetMapping(value = "/phone/MycrudDate")
 	public List<RecentlyModle> MycrudDate(int pageNumber, int pageSize, String sort, String field, String session_key,
 			String date, String date2) {
 		return util.MycrudDate(pageNumber, pageSize, sort, field, session_key, date, date2);

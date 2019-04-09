@@ -13,7 +13,7 @@ public class QySendMsgController {
 	@Autowired
 	private BirthdayDao bdao;
 
-	@GetMapping(value = "/birthday")
+	@GetMapping(value = "/phone/birthday")
 	public String birthday(String name,Model model) {
 		model.addAttribute("name", name + "，");
 		model.addAttribute("content", bdao.findRandomBirthday().getContent());
@@ -21,7 +21,7 @@ public class QySendMsgController {
 		return "BirthdayCake";
 	}
 	
-	@GetMapping(value="/qywx/EntryInfo")
+	@GetMapping(value="/phone/EntryInfo")
 	public String entryInfo(String name,Model model) {
 		//model.addAttribute("name",name);
 		return "entryInfo";

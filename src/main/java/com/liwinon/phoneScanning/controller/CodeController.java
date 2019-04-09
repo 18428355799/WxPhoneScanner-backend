@@ -33,7 +33,7 @@ public class CodeController {
 	 * @param url
 	 * @return
 	 */
-	@GetMapping(value="/code")
+	@GetMapping(value="/phone/code")
 	public String getCode(String url,String appid,String secrets,String code,String grant) {
 		String param = appid+secrets+code+grant;
 		System.out.println("wxApiParam:"+param);
@@ -62,7 +62,7 @@ public class CodeController {
 	 * @param session_key
 	 * @return
 	 */
-	@GetMapping(value="/saveName")
+	@GetMapping(value="/phone/saveName")
 	public String saveName(String session_key,String userName) {
 		//System.out.println("saveName模型接收到的数据："+session_key+","+userName);
 		Session table = sessionDao.findBySessionKey(session_key);

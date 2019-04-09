@@ -40,7 +40,7 @@ public class WxServiceImpl implements WxService {
 	private static String MembersSecret = "krcdN2IA2HiZ6BOjQ0-MhNwAEIQCtN8-dWIx_25hjCs";
 
 	// private static String url = "localhsot";
-	private static String url = "https://mesqrcode.liwinon.com";
+	private static String url = "https://mesqrcode.liwinon.com/phone";
 
 	/**
 	 * 
@@ -187,7 +187,7 @@ public class WxServiceImpl implements WxService {
 			return sendTextCardMsg(members, "入职通知", 
 					"<div class=\"normal\">您好，您已入职</div>"+"<div class=\"highlight\">"+pastday+"天</div>"
 							+ "<div class=\"normal\">请及时与直属领导沟通并完成入职流程。</div>",
-							url+"/qywx/EntryInfo", "查看详情");
+							url+"/EntryInfo", "查看详情");
 		}
 	}
 	/**
