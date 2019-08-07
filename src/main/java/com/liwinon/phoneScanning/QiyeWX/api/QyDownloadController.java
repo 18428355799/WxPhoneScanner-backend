@@ -1,29 +1,33 @@
 package com.liwinon.phoneScanning.QiyeWX.api;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.file.FileSystem;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.MembersDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
 
 @Controller
 @CrossOrigin
 public class QyDownloadController {
+	@Autowired
+	MembersDao memDao;
+	
 	/**
 	 * 新入职文档下载
 	 * 
 	 * @param name
-	 * @param model
 	 * @return
 	 */
 	@GetMapping(value = "/phone/qywx/downloadDoc")
@@ -58,4 +62,15 @@ public class QyDownloadController {
 		return null;
 	}
 
+	
+	@GetMapping(value="/phone/avatar")
+	@ResponseBody
+	public String avatar(String userid) {
+		if(userid!="") {
+			Members mem =  memDao.findByUserid(userid);
+			return mem.getAvatar();
+		}
+		
+		return null;
+	}
 }

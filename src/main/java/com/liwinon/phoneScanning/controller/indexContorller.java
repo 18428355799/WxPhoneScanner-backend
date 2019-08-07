@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.liwinon.phoneScanning.dao.InvoiceDao;
-import com.liwinon.phoneScanning.entity.Invoice;
-import com.liwinon.phoneScanning.entity.RecentlyModle;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Invoice;
+import com.liwinon.phoneScanning.QiyeWX.entity.model.RecentlyModle;
 import com.liwinon.phoneScanning.service.UtilService;
 
 @RestController

@@ -31,13 +31,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.liwinon.phoneScanning.dao.InvoiceDao;
-import com.liwinon.phoneScanning.dao.SessionDao;
-import com.liwinon.phoneScanning.dao.UserDao;
-import com.liwinon.phoneScanning.entity.Invoice;
-import com.liwinon.phoneScanning.entity.RecentlyModle;
-import com.liwinon.phoneScanning.entity.Session;
-import com.liwinon.phoneScanning.entity.User;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.SessionDao;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.UserDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Invoice;
+import com.liwinon.phoneScanning.QiyeWX.entity.model.RecentlyModle;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Session;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.User;
 
 
 @Service

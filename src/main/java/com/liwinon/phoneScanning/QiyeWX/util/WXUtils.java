@@ -1,13 +1,11 @@
 package com.liwinon.phoneScanning.QiyeWX.util;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.liwinon.phoneScanning.QiyeWX.api.WxService;
-import com.liwinon.phoneScanning.QiyeWX.entity.AccessToken;
 import com.liwinon.phoneScanning.service.UtilService;
 import com.liwinon.phoneScanning.service.UtilServiceImpl;
 

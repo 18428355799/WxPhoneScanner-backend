@@ -5,13 +5,10 @@ body {
 	margin: 0;
 	overflow:hidden;
 	background: #ee9ca7;
+  background: -webkit-linear-gradient(top left, #ee9ca7 0%, #ee9ca7 100%);
+  background: linear-gradient(to bottom right, #ee9ca7 0%, #ee9ca7 100%);
+}
 
-}
-@media screen and (max-width: 450px) {
-    .name{
-    	
-    }
-}
 
 #cake {
   display: block;
@@ -26,7 +23,7 @@ body {
   background: #ffffff;
   border-radius: 10px;
   position: absolute;
-  top: 228px;
+  top: 250px;
   left: 50%;
 	margin-left: -2.5px;
 	margin-top: -8.33333333px;

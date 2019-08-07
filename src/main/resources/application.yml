@@ -1,9 +1,16 @@
 spring:
-  datasource: 
-    driver-class-name: com.mysql.cj.jdbc.Driver  #新版驱动需要用 cj.jdbc
-    url: jdbc:mysql://localhost:3306/phone?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
-    username: root   #dev环境
-    password: 246810
+  datasource:
+    primary: #mysql
+      driver-class-name: com.mysql.cj.jdbc.Driver  #新版驱动需要用 cj.jdbc
+      #单数据源更改为url
+      jdbc-url: jdbc:mysql://localhost:3306/phone?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+      username: root   #dev环境
+      password: 246810
+    second:   #HRM
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver  #sqlserver
+      jdbc-url: jdbc:sqlserver://172.60.6.27;DatabaseName=HRM
+      username: sa
+      password: sa@!admin1
   jpa: 
     hibernate: 
       ddl-auto: update    #只能使用update!

@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.liwinon.phoneScanning.dao.InvoiceDao;
-import com.liwinon.phoneScanning.dao.SessionDao;
-import com.liwinon.phoneScanning.dao.UserDao;
-import com.liwinon.phoneScanning.entity.Invoice;
-import com.liwinon.phoneScanning.entity.Session;
-import com.liwinon.phoneScanning.entity.User;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.SessionDao;
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.UserDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Session;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.User;
 import com.liwinon.phoneScanning.service.UtilService;
 
 import net.sf.json.JSONObject;

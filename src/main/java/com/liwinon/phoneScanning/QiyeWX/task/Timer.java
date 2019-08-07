@@ -28,8 +28,8 @@ public class Timer {
 //		System.out
 //				.println("[" + Thread.currentThread().getName() + "]" + "this is scheduler task runing  " + (count++));
 		System.out.println(new Date()+": 查询生日祝福");
-		
-		//wx.sendBirthdayMsg();
+		wx.sendBirthdayMsgToXWD(); // 先执行XWD 可以获取其余员工的生日,可以让锂威发送
+		wx.sendBirthdayMsg();
 		
 	}
 	@Scheduled(cron = "0 0 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次
@@ -37,6 +37,7 @@ public class Timer {
 	private void entryTime() {
 		System.out.println(new Date()+":入职执行");
 		wx.sendEntryMsg(7);
+		System.out.println(wx.sendEntryMsgToXWD(7)); //发送当天入职推送
 	}
 
 }
