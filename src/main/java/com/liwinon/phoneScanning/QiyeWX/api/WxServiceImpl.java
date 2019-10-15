@@ -255,7 +255,7 @@ public class WxServiceImpl implements WxService {
 	 * 
 	 * @param pastday 已经入职的天数
 	 * @return
-	 * @deprecated
+	 *
 	 */
 	public String sendEntryMsg(int pastday) {
 		List<Members> members ;
