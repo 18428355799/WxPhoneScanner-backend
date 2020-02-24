@@ -22,7 +22,7 @@ public class Timer {
 	@Autowired
 	WxService wx;
 
-	@Scheduled(cron = "0 0 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次 http://cron.qqe2.com/ 可以在线编辑
+	@Scheduled(cron = "0 30 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次 http://cron.qqe2.com/ 可以在线编辑
 	//@Scheduled(cron = "0 0/1 * * * ?")  // 测试用,每两分钟执行
 	private void birthday() {
 //		System.out
