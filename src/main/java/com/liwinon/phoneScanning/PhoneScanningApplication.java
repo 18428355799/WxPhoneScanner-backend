@@ -10,8 +10,8 @@ import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactor
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication
 @EnableScheduling    //开启定时任务
+@SpringBootApplication
 public class PhoneScanningApplication {
 
 	public static void main(String[] args) {

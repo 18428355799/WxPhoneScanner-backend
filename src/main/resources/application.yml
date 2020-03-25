@@ -3,7 +3,7 @@ spring:
     primary: #mysql
       driver-class-name: com.mysql.cj.jdbc.Driver  #新版驱动需要用 cj.jdbc
       #单数据源更改为url
-      jdbc-url: jdbc:mysql://localhost:3306/phone?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
+      jdbc-url: jdbc:mysql://172.60.6.228:3306/phone?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8
       username: root   #dev环境
       password: 246810
     second:   #HRM

@@ -58,6 +58,7 @@ public class PrimaryConfig {
                 "org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl");
         return properties;
     }
+
     @Primary
     @Bean(name = "transactionManagerPrimary")
     PlatformTransactionManager transactionManagerSecondary(EntityManagerFactoryBuilder builder) {

@@ -15,13 +15,17 @@ public interface WxService {
 	 String saveMembers(String department_id, String fetch_child);
 	
 	//发送生日图文消息 ---- 锂威
+	@Deprecated
 	 String sendBirthdayMsg();
 	//发送生日图文消息 ---- 欣旺达
+	@Deprecated
 	 String sendBirthdayMsgToXWD();
 	
 	//发送入职提示---- 锂威
+	@Deprecated
 	 String sendEntryMsg(int pastday);
 	//发送入职提示---- 欣旺达
+	@Deprecated
 	 String sendEntryMsgToXWD(int pastday) ;
 
 

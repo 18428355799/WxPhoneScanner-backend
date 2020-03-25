@@ -16,14 +16,17 @@ import com.liwinon.phoneScanning.QiyeWX.api.WxService;
  * @author XiongJL
  *
  */
-@Component
+//@Component
+@Deprecated
 public class Timer {
 	private int count = 0;
 	@Autowired
 	WxService wx;
 
-	@Scheduled(cron = "0 30 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次 http://cron.qqe2.com/ 可以在线编辑
+	//转到Liwinon-qywxapp中开发
+	//@Scheduled(cron = "0 30 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次 http://cron.qqe2.com/ 可以在线编辑
 	//@Scheduled(cron = "0 0/1 * * * ?")  // 测试用,每两分钟执行
+	@Deprecated
 	private void birthday() {
 //		System.out
 //				.println("[" + Thread.currentThread().getName() + "]" + "this is scheduler task runing  " + (count++));
@@ -32,8 +35,11 @@ public class Timer {
 		wx.sendBirthdayMsg();
 		
 	}
-	@Scheduled(cron = "0 0 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次
+
+	//入职提醒，已经做好，在Liwinon-qywxapp中，定时器
+	//@Scheduled(cron = "0 0 8 * * ?") // (cron="0 0 8 * * ?") 每天8点执行一次
 	//@Scheduled(cron = "0 0/1 * * * ?")  // 测试用,每两分钟执行
+	@Deprecated
 	private void entryTime() {
 		System.out.println(new Date()+":入职执行");
 		wx.sendEntryMsg(7);

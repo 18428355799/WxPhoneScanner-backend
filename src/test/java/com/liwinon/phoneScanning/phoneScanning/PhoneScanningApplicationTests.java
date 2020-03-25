@@ -21,7 +21,12 @@ import com.liwinon.phoneScanning.service.UtilService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PhoneScanningApplicationTests {
-	@Autowired
+
+    @Test
+    public void contextLoads() {
+
+    }
+	/*@Autowired
 	private SessionDao sessionDao;
 	@Autowired
 	private InvoiceDao invDao;
@@ -36,12 +41,12 @@ public class PhoneScanningApplicationTests {
 	@Autowired
 	SapDao sapDao;
 	@Test
-	public void contextLoads() {
+	public void contextLoads() {*/
 //		UtilService us = new UtilServiceImpl() ;
 //		String s=us.reqGet("https://api.weixin.qq.com/sns/jscode2session?appid=wxce0c4f38650cfe54&secret=46ff72c849a207a31ae6559120cfce70&js_code=0013vHO12ITf8V0FZnS12lmWO123vHON&grant_type=authorization_code", "");
 //		//System.out.println("contextLoads"+s);
 		
-	}
+	//}
 //	@Test
 //	public void post() {
 //		
@@ -56,9 +61,9 @@ public class PhoneScanningApplicationTests {
 //		
 //	}
 //	
-	@Test 
-	public void sendbirth() {
-		System.out.println("开始发送生日祝福");
+//	@Test
+//	public void sendbirth() {
+	//	System.out.println("开始发送生日祝福");
 //		
 //		bs.sendEntryMsg(7);
 //		bs.sendBirthdayMsg();
@@ -71,11 +76,11 @@ public class PhoneScanningApplicationTests {
 //						+ "天</div>" + "<div class=\"normal\">请及时与直属领导沟通并完成入职流程。</div>",
 //				"www.baidu.com" + "/EntryInfo", "查看详情", "1000011");
 	//	bs.sendEntryMsgToXWD(7);
-	}
-	@Test
-	public void ssss(){
+	//}
+	//@Test
+	//public void ssss(){
 //		bs.saveMembers("1", "1");
-	}
+//	}
 	
 	
 //	@Test
@@ -107,7 +112,7 @@ public class PhoneScanningApplicationTests {
 //		//System.out.println(inv);
 //	}
 //
-public static String Corpid = "wwbc7acf1bd2c6f766"; // 企业ID
+/*public static String Corpid = "wwbc7acf1bd2c6f766"; // 企业ID
 	private static String AppID = "1000011"; // 应用ID
 	private static String Secret = "i2OLTe-rsYM4neNZrALf9HAP1xUEonqUQaKUFeWHHKI"; // 应用Secret
 	private static String MembersSecret = "krcdN2IA2HiZ6BOjQ0-MhNwAEIQCtN8-dWIx_25hjCs"; // 通讯录Secret
@@ -119,8 +124,8 @@ public static String Corpid = "wwbc7acf1bd2c6f766"; // 企业ID
 	private static String XWDApiGetBirthday = "http://appinter.sunwoda.com/weixin/blessing/findBirthdayUserNow.json";
 	private static String XWDApiGetAnniversary = "http://appinter.sunwoda.com/weixin/blessing/findAnniversaryUserNow.json";
 	// private static String url = "localhsot";
-	private static String url = "https://mesqrcode.liwinon.com/phone";
-	@Test
+	private static String url = "https://mesqrcode.liwinon.com/phone";*/
+/*	@Test
 	public void keyvalue() {
 		//首先获取员工对应的Leader
 		List<Members> members = new ArrayList<>();
@@ -152,5 +157,5 @@ public static String Corpid = "wwbc7acf1bd2c6f766"; // 企业ID
 				"\n 不符合录用条件者，处理流程： " +
 				"\n 用人部门需提供事实依据，并及时做好员工的沟通工作，由员工提出离职。" +
 				"\n 如沟通后仍无法处理的，需将所收集的不符合录用条件的资料，于试用期结束前十天提交到人力资源中心员工关系专员处协助处理。");
-	}
+	}*/
 }
