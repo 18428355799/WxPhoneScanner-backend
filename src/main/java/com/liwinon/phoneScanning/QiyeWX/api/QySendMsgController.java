@@ -13,6 +13,13 @@ public class QySendMsgController {
 	@Autowired
 	private BirthdayDao bdao;
 
+	/**
+	 * 生日页面进入方法
+	 * @param name
+	 * @param model
+	 * @return
+	 */
+	@Deprecated
 	@GetMapping(value = "/phone/birthday")
 	public String birthday(String name,Model model) {
 		model.addAttribute("name", name + "，");
@@ -20,7 +27,13 @@ public class QySendMsgController {
 		System.out.println("获取到的name:"+name);
 		return "BirthdayCake";
 	}
-	
+
+	/**
+	 *
+	 * @param name
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(value="/phone/EntryInfo")
 	public String entryInfo(String name,Model model) {
 		//model.addAttribute("name",name);

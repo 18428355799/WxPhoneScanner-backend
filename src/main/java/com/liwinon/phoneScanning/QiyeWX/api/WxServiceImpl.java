@@ -112,7 +112,6 @@ public class WxServiceImpl implements WxService {
 	/**
 	 * 发送生日祝福 ---- 锂威能源企业微信
 	 */
-	@Deprecated
 	@Override
 	public String sendBirthdayMsg() {
 		Calendar cal = Calendar.getInstance();
@@ -150,7 +149,6 @@ public class WxServiceImpl implements WxService {
 	 * 发送生日祝福 ---- 欣旺达企业微信
 	 * @return
 	 */
-	@Deprecated
 	public String sendBirthdayMsgToXWD() {
 		// 第一个请求用于测试最大条数.
 		String test = util.reqGet(XWDApiGetBirthday, "page=1&pageSize=1");
@@ -219,7 +217,6 @@ public class WxServiceImpl implements WxService {
 	}
 
 	/** 发送生日方法 */
-	@Deprecated
 	private String WXSendbirth(String userid, String name, AccessToken token, String appid) {
 		System.out.println("开始发送生日祝福");
 		Map<String, Object> resultMap = new HashMap<String, Object>();
@@ -254,7 +251,6 @@ public class WxServiceImpl implements WxService {
 	 * @param pastday 已经入职的天数
 	 * @return
 	 */
-	@Deprecated
 	public String sendEntryMsg(int pastday) {
 		List<Members> members ;
 		Date entryday = WXUtils.getPastDate(pastday);
@@ -424,7 +420,6 @@ public class WxServiceImpl implements WxService {
 	}
 
 	/** 发送给欣旺达入职推送 */
-	@Deprecated
 	public String sendEntryMsgToXWD(int pastday) {
 		// Map<String, String> param = new HashMap<String, String>();
 //				"入职通知", "<div class=\"normal\">您好，您已入职</div>" + "<div class=\"highlight\">" + pastday
@@ -546,7 +541,6 @@ public class WxServiceImpl implements WxService {
 	}
 
 	/**发送多人文本卡片信息*/
-	@Deprecated
 	public String sendMultiTextCardMsg(List<Members> members, String title, String description, String url, String btntxt,
 									   String appid){
 		AccessToken token = getUsefulToken(Secret, 0, appid, Corpid);
@@ -555,7 +549,6 @@ public class WxServiceImpl implements WxService {
 	/** 发送卡片信息
 	 *  touser 成员ID列表（消息接收者，多个接收者用‘|’分隔，最多支持1000个）。特殊情况：指定为@all，则向关注该企业应用的全部成员发送
 	 * */
-	@Deprecated
 	public String WXSendEntry(String userid, String name, AccessToken token, String appid, String title,
 			String description, String URL,String btntxt) {
 		JSONObject res = getSendEntryWxRes(userid, name, token, appid, title, description, URL, btntxt);
@@ -609,7 +602,6 @@ public class WxServiceImpl implements WxService {
 		return "ok";
 	}
 	/**发送单人文本信息*/
-	@Deprecated
 	public String WXSendTextMsgToOne(String userid, AccessToken token,String content){
 		JSONObject json = new JSONObject();
 		JSONObject str = new JSONObject();
