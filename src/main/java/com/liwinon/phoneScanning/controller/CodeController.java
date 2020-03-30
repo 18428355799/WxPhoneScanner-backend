@@ -2,6 +2,7 @@ package com.liwinon.phoneScanning.controller;
 
 import java.util.Date;
 
+import com.liwinon.phoneScanning.service.HttpUtilApache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +37,7 @@ public class CodeController {
 	public String getCode(String url,String appid,String secrets,String code,String grant) {
 		String param = appid+secrets+code+grant;
 		System.out.println("wxApiParam:"+param);
-		String key = util.get(url+"?"+param);	
+		String key = HttpUtilApache.get(url,param);//util.get(url+"?"+param);
 		System.out.println("getCode:"+ key);
 		JSONObject req = JSONObject.fromObject(key);
 		String session_key = req.getString("session_key");

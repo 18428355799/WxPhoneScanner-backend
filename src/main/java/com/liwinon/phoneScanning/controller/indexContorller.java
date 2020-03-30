@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
@@ -27,17 +28,24 @@ public class indexContorller {
 
 	@Transactional
 	@GetMapping(value = "/phone/index")
+	@ResponseBody
 	public Map<String, Object> index(String qrContent, String session_key, String bxName, String bxId) {
 		// System.out.println("接收前端数据："+qrContent);
-		System.out.println("bxName" + bxName);
-		System.out.println("bxId" + bxId);
+		System.out.println("bxName:" + bxName);
+		System.out.println("bxId:" + bxId);
 		Map<String, Object> result = new HashMap<>();
 		if (qrContent != null && qrContent != "" && bxName != null && bxName != "" && bxId != null && bxId != "") {
 			if (invDao.findByContent(qrContent) != null) {
 				// System.out.println("数据库返回结果："+invDao.findByContent(qrContent));
 				result.put("msg", "发票已存在！");
-				result.put("data", invDao.findByContent(qrContent));
-				return result;
+				Invoice inv = invDao.findByContent(qrContent);
+				Map<String, Map<String, String>> aa = new HashMap<>();
+				Map<String, String> bb = new HashMap<>();
+				bb.put("content",qrContent);
+				aa.put("data",bb);
+				//result.put("msg", "扫描成功！");
+				result.put("data", aa);
+				//result.put("data", invDao.findByContent(qrContent));
 			} else {
 				int userid = util.getUserId(session_key);
 				Invoice inv = new Invoice();
@@ -47,14 +55,19 @@ public class indexContorller {
 				inv.setReimbursement(bxName);
 				inv.setBillsId(bxId);
 				invDao.save(inv);
+				Map<String, Map<String, String>> aa = new HashMap<>();
+				Map<String, String> bb = new HashMap<>();
+				bb.put("content",qrContent);
+				aa.put("data",bb);
+			//	String json ="{\"data\":{\"content\":'"+qrContent+"'}}";
 				result.put("msg", "扫描成功！");
 				result.put("data", inv);
-				return result;
+				System.out.println(result.toString());
 			}
 		} else {
 			result.put("msg", "信息有误?扫描失败！");
-			return result;
 		}
+		return result;
 
 	}
 

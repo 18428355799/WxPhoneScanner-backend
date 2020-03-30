@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -164,10 +165,11 @@ public class UtilServiceImpl implements UtilService {
 	 * 利用HTTPClient 发送GET 请求
 	 * 
 	 */
-	public String get(String url)
-	      {
-	          String result = null;
-	          CloseableHttpClient httpClient = HttpClients.createDefault();
+	public String get(String url) {
+	         String result = null;
+	         CloseableHttpClient httpClient = HttpClients.createDefault();
+	      //   String testEncode = URLEncoder.encode(url, "utf-8" );
+			// System.out.println(testEncode);
 	         HttpGet get = new HttpGet(url);
 	         CloseableHttpResponse response = null;
 	         try {
@@ -261,7 +263,7 @@ public class UtilServiceImpl implements UtilService {
 	/**
 	 * @author XiongJL
 	 * @return 0代表错误，其余正整数即为用户ID
-	 * @param String session_key 会话秘钥
+	 * param String session_key 会话秘钥
 	 */
 	@Override
 	public int getUserId(String session_key) {

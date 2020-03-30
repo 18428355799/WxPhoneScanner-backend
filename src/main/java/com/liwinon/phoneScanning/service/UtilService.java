@@ -1,5 +1,6 @@
 package com.liwinon.phoneScanning.service;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.liwinon.phoneScanning.QiyeWX.entity.model.RecentlyModle;

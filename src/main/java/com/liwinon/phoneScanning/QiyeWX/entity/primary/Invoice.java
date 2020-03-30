@@ -82,11 +82,13 @@ public class Invoice {
 
 	@Override
 	public String toString() {
-		return "Invoice [invID=" + invID + ", content=" + content + ", userId=" + userId + ", reimbursement="
-				+ reimbursement + ", billsId=" + billsId + ", pubDate=" + pubDate + "]";
+		return "Invoice{" +
+				"invID=" + invID +
+				", content='" + content + '\'' +
+				", userId=" + userId +
+				", reimbursement='" + reimbursement + '\'' +
+				", billsId='" + billsId + '\'' +
+				", pubDate=" + pubDate +
+				'}';
 	}
-
-	
-	
-	
 }
