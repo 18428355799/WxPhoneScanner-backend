@@ -39,13 +39,16 @@ public class indexContorller {
 				// System.out.println("数据库返回结果："+invDao.findByContent(qrContent));
 				result.put("msg", "发票已存在！");
 				Invoice inv = invDao.findByContent(qrContent);
-				Map<String, Map<String, String>> aa = new HashMap<>();
-				Map<String, String> bb = new HashMap<>();
-				bb.put("content",qrContent);
-				aa.put("data",bb);
-				//result.put("msg", "扫描成功！");
-				result.put("data", aa);
+				//Map<String, Map<String, String>> aa = new HashMap<>();
+				//Map<String, String> bb = new HashMap<>();
+				//bb.put("content",qrContent);
+				//aa.put("data",bb);
+				String data="发票内容:"+inv.getContent()+"；发票报销人："+
+						inv.getReimbursement()+"；发票重复单号："+inv.getBillsId();
+				result.put("msg", data+";\n发票已存在！");
+			//	result.put("data", aa);
 				//result.put("data", invDao.findByContent(qrContent));
+				return result;
 			} else {
 				int userid = util.getUserId(session_key);
 				Invoice inv = new Invoice();
@@ -55,20 +58,20 @@ public class indexContorller {
 				inv.setReimbursement(bxName);
 				inv.setBillsId(bxId);
 				invDao.save(inv);
-				Map<String, Map<String, String>> aa = new HashMap<>();
-				Map<String, String> bb = new HashMap<>();
-				bb.put("content",qrContent);
-				aa.put("data",bb);
+				//Map<String, Map<String, String>> aa = new HashMap<>();
+				//Map<String, String> bb = new HashMap<>();
+			//	bb.put("content",qrContent);
+				//aa.put("data",bb);
 			//	String json ="{\"data\":{\"content\":'"+qrContent+"'}}";
-				result.put("msg", "扫描成功！");
+				result.put("msg", "发票内容:"+qrContent+";\n扫描成功！");
 				result.put("data", inv);
 				System.out.println(result.toString());
+				return result;
 			}
 		} else {
 			result.put("msg", "信息有误?扫描失败！");
+			return result;
 		}
-		return result;
-
 	}
 
 	@GetMapping(value = "/phone/delete")
