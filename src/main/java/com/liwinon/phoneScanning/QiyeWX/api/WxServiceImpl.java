@@ -1,25 +1,22 @@
 package com.liwinon.phoneScanning.QiyeWX.api;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-import javax.transaction.Transactional;
-
-import com.liwinon.phoneScanning.QiyeWX.dao.secondRepo.SapDao;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.MembersDao;
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.WXdao;
+import com.liwinon.phoneScanning.QiyeWX.dao.secondRepo.SapDao;
 import com.liwinon.phoneScanning.QiyeWX.entity.primary.AccessToken;
 import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
 import com.liwinon.phoneScanning.QiyeWX.util.WXUtils;
 import com.liwinon.phoneScanning.service.UtilService;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import javax.transaction.Transactional;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 public class WxServiceImpl implements WxService {
@@ -222,7 +219,7 @@ public class WxServiceImpl implements WxService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		Map<String, Object> secondtMap = new HashMap<String, Object>(); // 浜岀骇json
 		Map<String, String> thirdMap = new HashMap<String, String>(); // 浜岀骇json
-		resultMap.put("touser", userid);
+		resultMap.put("touser", "1907128000");
 		resultMap.put("msgtype", "news");
 		resultMap.put("agentid", appid); // 应用ID
 		thirdMap.put("title","亲爱的" + name + "     祝你生日快乐!");

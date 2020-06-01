@@ -1,13 +1,15 @@
 package com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo;
 
-import java.util.Date;
-import java.util.List;
-
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
+import java.util.Date;
+import java.util.List;
 
+/**
+ * @author 1907128000
+ */
 public interface MembersDao extends JpaRepository<Members, Integer>{
 	
 	@Query(value="SELECT s from Members s WHERE s.birthday = :birthday")

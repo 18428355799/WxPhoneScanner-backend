@@ -1,8 +1,8 @@
 package com.liwinon.phoneScanning.QiyeWX.api;
 
 
-import javax.servlet.http.HttpServletRequest;
-
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.MembersDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.MembersDao;
-import com.liwinon.phoneScanning.QiyeWX.entity.primary.Members;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @CrossOrigin
@@ -69,9 +68,9 @@ public class QyDownloadController {
 	public String avatar(String userid) {
 		if(userid!="") {
 			Members mem =  memDao.findByUserid(userid);
+			System.out.println(mem.getAvatar());
 			return mem.getAvatar();
 		}
-		
 		return null;
 	}
 }
