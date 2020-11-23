@@ -1,20 +1,18 @@
 package com.liwinon.phoneScanning.controller;
 
-import java.util.Date;
-
-import com.liwinon.phoneScanning.service.HttpUtilApache;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.SessionDao;
 import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.UserDao;
 import com.liwinon.phoneScanning.QiyeWX.entity.primary.Session;
 import com.liwinon.phoneScanning.QiyeWX.entity.primary.User;
+import com.liwinon.phoneScanning.service.HttpUtilApache;
 import com.liwinon.phoneScanning.service.UtilService;
-
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 @RestController
 public class CodeController {
@@ -33,9 +31,10 @@ public class CodeController {
 	 * @param url
 	 * @return
 	 */
-	@GetMapping(value="/phone/code")
-	public String getCode(String url,String appid,String secrets,String code,String grant) {
-		String param = appid+secrets+code+grant;
+	@GetMapping(value="/yphone/code")
+	//public String getCode(String url,String appid,String secrets,String code,String grant) {
+	public String getCode(String url,String code,String grant) {
+		String param = "wxce0c4f38650cfe54"+"6c34868ac23eb92e4e65396d6c7c39c7"+code+grant;
 		System.out.println("wxApiParam:"+param);
 		String key = HttpUtilApache.get(url,param);//util.get(url+"?"+param);
 		System.out.println("getCode:"+ key);
@@ -62,7 +61,7 @@ public class CodeController {
 	 * @param session_key
 	 * @return
 	 */
-	@GetMapping(value="/phone/saveName")
+	@GetMapping(value="/yphone/saveName")
 	public String saveName(String session_key,String userName) {
 		//System.out.println("saveName模型接收到的数据："+session_key+","+userName);
 		Session table = sessionDao.findBySessionKey(session_key);

@@ -1,23 +1,19 @@
 package com.liwinon.phoneScanning.controller;
 
+import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
+import com.liwinon.phoneScanning.QiyeWX.entity.model.RecentlyModle;
+import com.liwinon.phoneScanning.QiyeWX.entity.primary.Invoice;
+import com.liwinon.phoneScanning.service.UtilService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.transaction.Transactional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.liwinon.phoneScanning.QiyeWX.dao.primaryRepo.InvoiceDao;
-import com.liwinon.phoneScanning.QiyeWX.entity.primary.Invoice;
-import com.liwinon.phoneScanning.QiyeWX.entity.model.RecentlyModle;
-import com.liwinon.phoneScanning.service.UtilService;
 
 @RestController
 public class indexContorller {
@@ -27,7 +23,7 @@ public class indexContorller {
 	private UtilService util;
 
 	@Transactional
-	@GetMapping(value = "/phone/index")
+	@GetMapping(value = "/yphone/index")
 	@ResponseBody
 	public Map<String, Object> index(String qrContent, String session_key, String bxName, String bxId) {
 		// System.out.println("接收前端数据："+qrContent);
@@ -74,7 +70,7 @@ public class indexContorller {
 		}
 	}
 
-	@GetMapping(value = "/phone/delete")
+	@GetMapping(value = "/yphone/delete")
 	@Transactional
 	public long del(int invID, String session_key) {
 		// System.out.println(util.isThatHim(session_key, invID));
@@ -93,7 +89,7 @@ public class indexContorller {
 	 * @param field
 	 * @return
 	 */
-	@GetMapping(value = "/phone/crud")
+	@GetMapping(value = "/yphone/crud")
 	public List<RecentlyModle> crud(int pageNumber, int pageSize, String sort, String field) {
 		List<RecentlyModle> list = util.getPage(pageNumber, pageSize, sort, field);
 		return list;
@@ -109,7 +105,7 @@ public class indexContorller {
 	 * @param session_key
 	 * @return
 	 */
-	@GetMapping(value = "/phone/Mycrud")
+	@GetMapping(value = "/yphone/Mycrud")
 	public List<RecentlyModle> crud(int pageNumber, int pageSize, String sort, String field, String session_key) {
 		if (util.getMyPage(pageNumber, pageSize, sort, field, session_key) == null) {
 			return null; // 前端做非空判断
@@ -130,7 +126,7 @@ public class indexContorller {
 	 * @param date2
 	 * @return RecentlyModle 模型的list集合
 	 */
-	@GetMapping(value = "/phone/MycrudDate")
+	@GetMapping(value = "/yphone/MycrudDate")
 	public List<RecentlyModle> MycrudDate(int pageNumber, int pageSize, String sort, String field, String session_key,
 			String date, String date2) {
 		return util.MycrudDate(pageNumber, pageSize, sort, field, session_key, date, date2);

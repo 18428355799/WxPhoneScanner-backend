@@ -23,7 +23,7 @@ spring:
       exclude: WEB/INF/**    #不重启的目录
       additional-paths: src/main/java  #重启的目录
 server:
-  port: 8099  #443 如果不用nginx则改为443
+  port: 9016  #443 如果不用nginx则改为443
 #  ssl: 
  #   key-store: classpath:mesqrcode.jks
 #    key-store-password: d1Kh1c65
